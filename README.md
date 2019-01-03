@@ -18,7 +18,7 @@ This file includes casual, example-based discussion of the proposal. The next st
 
 This proposal draws heavily from corresponding features in many languages, like Python and Ruby, which all have a range operator or function.
 
-Want to contribute/discuss this proposal? [Open an issue!](/issues)
+Want to contribute/discuss this proposal? [Open an issue!](https://github.com/wuz/proposal-range-operator/issues)
 
 ## Motivating Examples
 
