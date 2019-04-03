@@ -10,9 +10,9 @@
 
 ## Introduction
 
-This proposal adds a range function and operator to the Iterable object.
+This proposal is to add the ability to have have a native range functionality in Javascript. 
 
-This proposal is for both a `Iterable.range` method and an operator for future use.
+We have outlined to options in this proposal. The first is an optional property on the Iterable interface, which would be used to add specific implementations of range to Array, Set, TypedArray, and possibly more (like String and Number). The second is to add `range` function to each class that could be "ranged", allowing for methods like `Number.rangeInt8`, which would create a typed array.
 
 This file includes casual, example-based discussion of the proposal. The next step will be adding an actual specification, which will happen in [CORE.md](/CORE.md).
 
@@ -22,41 +22,49 @@ Want to contribute/discuss this proposal? [Open an issue!](https://github.com/wu
 
 ## Motivating Examples
 
-Checking a number exists with in a range:
+Each example is presented with how they would look for each implementation option. In most cases, they uses are very similar, but the background implementation is different.
 
-```javascript
+Checking a number exists with in a range:
+**Option 1**
+```js
 function inAllowedRange(number) {
-    return Iterable.range(1, 10, 3).incudes(number);
+    return Array.range(1, 10, 3).includes(number);
+}
+```
+
+**Option 2**
+```js
+function inAllowedRange(number) {
+    return Number.rangeInt8(1, 10, 3).includes(number);
+}
+```
+
+Get all letters in a sequence:
+**Option 1/Option 2**
+```js
+function atoz() {
+    return String.range("a", "z");
 }
 ```
 
 Simpler ways to create empty states on iterated content.
-
+**Option 1**
 ```js
 function TodoApp() {
   return (
-    Iterable.range(0, 3).map(() => 
-        <Todo />   
+    Array.range(0, 3).map(() => 
+        <TodoListItem />   
     )
   );
 }
 ```
 
-Using the range operator:
-
-```javascript
-for(let num of 0...10) {
-    console.log(num);
-}
-```
-
-Using the range operator with an array:
-
+**Option 2**
 ```js
 function TodoApp() {
   return (
-    [0...3].map(() => 
-        <Todo />   
+    Number.rangeInt8(0, 3).map(() => 
+        <TodoListItem />   
     )
   );
 }
