@@ -4,7 +4,7 @@
 
 **Stage**: 0
 
-**Authors**: Conlin Durbin (Lessonly, [@CallMeWuz](https://twitter.com/CallMeWuz)), Amelia Bellamy-Royds ([@AmeliasBrain](https://twitter.com/AmeliasBrain))
+**Authors**: Conlin Durbin (HackerRank, [@CallMeWuz](https://twitter.com/CallMeWuz)), Amelia Bellamy-Royds ([@AmeliasBrain](https://twitter.com/AmeliasBrain))
 
 **Champions**:
 
